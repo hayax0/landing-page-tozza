@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* Habilita dark mode via classe .dark no Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* Tipografia premium: Montserrat para títulos, Inter para corpo */
+  --font-heading: var(--font-montserrat);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+}
+
+/* Aplica Montserrat em todos os títulos globalmente */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+}
+
+/* ─────────────────────────────────────────────
+   ANIMAÇÕES DE ENTRADA — fade-in-up
+   Cada elemento sobe levemente enquanto aparece
+───────────────────────────────────────────── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out both;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Delays em cascata para stagger nos cards */
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }
+.animation-delay-600 { animation-delay: 600ms; }
+.animation-delay-700 { animation-delay: 700ms; }
+
+/* Smooth scroll nativo */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─────────────────────────────────────────────
+   MICRO-INTERAÇÕES GLOBAIS DE BOTÃO
+───────────────────────────────────────────── */
+.btn-primary {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+.btn-primary:hover  { transform: scale(1.05); }
+.btn-primary:active { transform: scale(0.95); }
