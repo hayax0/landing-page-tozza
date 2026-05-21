@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import PetGallery from "@/components/PetGallery";
 import Testimonials from "@/components/Testimonials";
 import { useEffect, useState } from "react";
 
@@ -27,6 +28,7 @@ export default function TozzaBoutiquePage() {
       <Header dark={dark} toggleDark={toggleDark} />
       <Hero />
       <Services />
+      <PetGallery />
       <Testimonials />
       <ContactForm />
       <Footer />
